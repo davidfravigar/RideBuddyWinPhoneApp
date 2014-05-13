@@ -8,6 +8,9 @@
     <!--Application Resources-->
     <Application.Resources>
         <local:LocalizedStrings xmlns:local="clr-namespace:RideBuddy" x:Key="LocalizedStrings"/>
+        
+        <!-- styles mofo -->
+        
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

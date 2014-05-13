@@ -8,11 +8,31 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using RideBuddy.Resources;
 using RideBuddy.ViewModels;
+using RideBuddy.Classes;
+using Microsoft.WindowsAzure.MobileServices;
+using Facebook.Client;
 
 namespace RideBuddy
 {
     public partial class App : Application
     {
+        #region MY Classes
+        /// <summary>
+        /// couldn't be arsed to keep calling the classes that are needed on every page, so here they are! 
+        /// </summary>
+        public static AppSettings Setting;
+        public static PhoneState PhoneState;
+        public static Errors Error;
+        #endregion
+
+        /// <summary>
+        /// Facebook vars
+        /// </summary>
+        public static AppSettings Settings;
+        public static FacebookSessionClient FacebookSessionClient = new FacebookSessionClient("284094491766745");
+        internal static string FaceBookAccessToken = String.Empty;
+        internal static string FacebookId = String.Empty;
+
         private static MainViewModel viewModel = null;
 
         /// <summary>
@@ -36,6 +56,14 @@ namespace RideBuddy
         /// </summary>
         /// <returns>The root frame of the Phone Application.</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
+
+        /// <summary>
+        /// Azure mobile services keys
+        /// </summary>
+        public static MobileServiceClient MobileService = new MobileServiceClient(
+            "https://ride-buddy.azure-mobile.net/",
+            "nEaXWBFaIljcKtpYyPYGBzvmmeQxFT53"
+            );
 
         /// <summary>
         /// Constructor for the Application object.
@@ -72,6 +100,12 @@ namespace RideBuddy
                 // Caution:- Use this under debug mode only. Application that disables user idle detection will continue to run
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
+
+                #region my classes 
+                Setting = new AppSettings();
+                PhoneState = new PhoneState();
+                Error = new Errors();
+                #endregion
             }
         }
 
