@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="RideBuddy.Views.AccountLoggedOut"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+             mc:Ignorable="d"
+             FontFamily="{StaticResource PhoneFontFamilyNormal}"
+             FontSize="{StaticResource PhoneFontSizeNormal}"
+             Foreground="{StaticResource PhoneForegroundBrush}"
+             d:DesignHeight="480"
+             d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot"
+          Background="Transparent">
+        <StackPanel Style="{StaticResource loginButtonStackPanel}"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    Width="470">
+            <Image x:Name="accountImage"
+                   Style="{StaticResource loginButtonImage}"
+                   Source="/Assets/Images/facebook.png"
+                   toolkit:TiltEffect.IsTiltEnabled="True" />
+            <StackPanel Style="{StaticResource loginButtonInnerStackPanel}"
+                        toolkit:TiltEffect.IsTiltEnabled="True"
+                        Margin="0,4,0,0">
+                <TextBlock Text="Facebook"
+                           Style="{StaticResource PhoneTextLargeStyle}"
+                           toolkit:TiltEffect.IsTiltEnabled="True" />
+                <TextBlock Text="Login to your Facebook account to use Ride Buddy"
+                           TextWrapping="Wrap"
+                           Width="320"
+                           Style="{StaticResource PhoneTextSubtleStyle}" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

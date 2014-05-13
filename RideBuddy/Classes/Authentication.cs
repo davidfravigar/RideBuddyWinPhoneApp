@@ -58,6 +58,8 @@ namespace RideBuddy.Classes
                     accountDetails.FbAuthToken = fbSession.AccessToken;
                     accountDetails.FbIdentity = fbSession.FacebookId;
                     accountDetails.name = fbUser.name;
+                    //this might work!
+                    accountDetails.Email = fbUser.email;
                     accountDetails.Platform = "Windows Phone";
                     accountDetails.AuthService = "Facebook";
 

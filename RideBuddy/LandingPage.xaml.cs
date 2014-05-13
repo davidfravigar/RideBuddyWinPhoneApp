@@ -19,13 +19,18 @@ namespace RideBuddy
         #endregion
 
         #region constructor
+        public LandingPage()
+        {
+            InitializeComponent();
+        }
         #endregion
 
+        
         #region navigated methods 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            Loaded += LandingPage_Loaded;
             base.OnNavigatedTo(e);
+            Loaded += LandingPage_Loaded;
         }
 
         void LandingPage_Loaded(object sender, RoutedEventArgs e)
@@ -34,6 +39,7 @@ namespace RideBuddy
         }
         #endregion
 
+        
         #region private methods 
         private void checkApplicationState()
         {
@@ -175,6 +181,5 @@ namespace RideBuddy
             messageBox.Show();
         }
         #endregion
-   
     }
 }

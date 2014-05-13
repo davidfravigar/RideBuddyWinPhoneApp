@@ -112,6 +112,9 @@
     <Compile Include="Pages\Account.xaml.cs">
       <DependentUpon>Account.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\EditAccount.xaml.cs">
+      <DependentUpon>EditAccount.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -122,6 +125,15 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\UserProfileModel.cs" />
     <Compile Include="ViewModels\UserProfileViewModel.cs" />
+    <Compile Include="Views\AccountEdit.xaml.cs">
+      <DependentUpon>AccountEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AccountLoggedIn.xaml.cs">
+      <DependentUpon>AccountLoggedIn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AccountLoggedOut.xaml.cs">
+      <DependentUpon>AccountLoggedOut.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -148,6 +160,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <DesignData Include="SampleData\UserProflieSampleData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </DesignData>
+    <Page Include="Pages\EditAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AccountEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AccountLoggedIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AccountLoggedOut.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -159,6 +191,10 @@
   <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
     <Content Include="Assets\ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SampleData\Images\profile.jpg" />
+    <Content Include="Assets\Images\facebook.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
@@ -200,8 +236,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Icons\" />
-    <Folder Include="Assets\Images\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Facebook">

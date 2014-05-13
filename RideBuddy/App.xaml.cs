@@ -100,13 +100,13 @@ namespace RideBuddy
                 // Caution:- Use this under debug mode only. Application that disables user idle detection will continue to run
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
-
-                #region my classes 
-                Setting = new AppSettings();
-                PhoneState = new PhoneState();
-                Error = new Errors();
-                #endregion
             }
+
+            #region my classes
+            Setting = new AppSettings();
+            PhoneState = new PhoneState();
+            Error = new Errors();
+            #endregion
         }
 
         // Code to execute when the application is launching (eg, from Start)

@@ -10,6 +10,33 @@
         <local:LocalizedStrings xmlns:local="clr-namespace:RideBuddy" x:Key="LocalizedStrings"/>
         
         <!-- styles mofo -->
+        <Style x:Key="loginButtonStackPanel"
+               TargetType="StackPanel">
+            <Setter Property="Orientation"
+                    Value="Horizontal" />
+        </Style>
+
+        <Style x:Key="loginButtonInnerStackPanel"
+               TargetType="StackPanel">
+            <Setter Property="Orientation"
+                    Value="Vertical" />
+            <Setter Property="Margin"
+                    Value="0,0,0,0" />
+        </Style>
+
+        <Style x:Key="loginButtonImage"
+               TargetType="Image">
+            <Setter Property="Height"
+                    Value="116" />
+            <Setter Property="Width"
+                    Value="116" />
+            <Setter Property="VerticalAlignment"
+                    Value="Top" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Left" />
+            <Setter Property="Margin"
+                    Value="12,12,0,0" />
+        </Style>
         
     </Application.Resources>
 
