@@ -21,5 +21,6 @@ namespace RideBuddy.Classes
         public string FbAuthToken { get; set; }
         public string FbIdentity { get; set; }
         public string Email { get; set; }
+        public string ProfileImageUrl { get; set; }
     }
 }

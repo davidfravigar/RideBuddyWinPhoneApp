@@ -93,6 +93,9 @@ namespace RideBuddy.Pages
                 await authenticate.authenticate();
                 //justToMakeSureMessageBox();
                 NavigationService.Navigate(new Uri("/Pages/EditAccount.xaml", UriKind.Relative));
+
+                SystemTray.ProgressIndicator.IsIndeterminate = false;
+                SystemTray.ProgressIndicator.IsVisible = false;
             }
         }
         #endregion

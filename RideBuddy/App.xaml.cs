@@ -28,7 +28,6 @@ namespace RideBuddy
         /// <summary>
         /// Facebook vars
         /// </summary>
-        public static AppSettings Settings;
         public static FacebookSessionClient FacebookSessionClient = new FacebookSessionClient("284094491766745");
         internal static string FaceBookAccessToken = String.Empty;
         internal static string FacebookId = String.Empty;

@@ -13,14 +13,17 @@ namespace RideBuddy.Classes
         #region private properties
         private IsolatedStorageSettings settings;
 
-        private const string IsLoggedInSettingsKey = "LoggedIn";
-        private const bool IsLogedInDefaultValue = false;
+        private const string loggedInSettingsKey = "LoggedIn";
+        private const bool logedInDefaultValue = false;
 
         private const string locationConsentSettingsKey = "LocationConsent";
         private const bool locationConsentDefaultValue = false;
 
         private const string accountDetailsSettingsKey = "AccountDetails";
         private const string accountDetailsDefaultValue = null;
+
+        private const string userProfileSettingsKey = "UserProfile";
+        private const string userProfileDefaultValue = null;
         #endregion
 
         #region public properties 
@@ -28,11 +31,11 @@ namespace RideBuddy.Classes
         {
             get
             {
-                return GetValueOrDefault<bool>(IsLoggedInSettingsKey, IsLogedInDefaultValue);
+                return GetValueOrDefault<bool>(loggedInSettingsKey, logedInDefaultValue);
             }
             set
             {
-                if (AddorUpdateValue(IsLoggedInSettingsKey, value))
+                if (AddorUpdateValue(loggedInSettingsKey, value))
                 {
                     Save();
                 }
@@ -69,6 +72,22 @@ namespace RideBuddy.Classes
                     Save();
                 }
                 OnPropertyChanged("ProfileImage");
+            }
+        }
+
+        public string UserProfile
+        {
+            get
+            {
+                return GetValueOrDefault<string>(userProfileSettingsKey, userProfileDefaultValue);
+            }
+            set
+            {
+                if (AddorUpdateValue(userProfileSettingsKey, value))
+                {
+                    Save();
+                }
+                OnPropertyChanged("UserProfile");
             }
         }
         #endregion

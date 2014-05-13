@@ -13,23 +13,89 @@
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
-    <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <ScrollViewer>
+        <!--LayoutRoot is the root grid where all page content is placed-->
+        <Grid x:Name="LayoutRoot"
+              Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
+            <!--TitlePanel contains the name of the application and page title-->
+            <StackPanel Grid.Row="0"
+                        Margin="12,17,0,28">
+                <TextBlock Text="MY APPLICATION"
+                           Style="{StaticResource PhoneTextNormalStyle}" />
+                <TextBlock Text="Your Account"
+                           Margin="9,-7,0,0"
+                           Style="{StaticResource PhoneTextTitle1Style}" />
+            </StackPanel>
 
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
+            <!--ContentPanel - place additional content here-->
+            <Grid x:Name="ContentPanel"
+                  Grid.Row="1"
+                  Margin="12,0,12,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="accountMessage"
+                           Style="{StaticResource PhoneTextTitle2Style}"
+                           Text="This is text"
+                           Grid.ColumnSpan="2"
+                           TextWrapping="Wrap" />
+                <Image x:Name="profileImage"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       Width="200"
+                       Height="200"
+                       VerticalAlignment="Top"
+                       Margin="12,12,0,0" />
+                <StackPanel Grid.Row="1"
+                            Grid.Column="1">
+                    <TextBlock x:Name="NameTxt"
+                               Style="{StaticResource PhoneTextExtraLargeStyle}"
+                               Text="Name"
+                               TextWrapping="Wrap"
+                               Margin="12,12,0,0"
+                               Foreground="#1BA1E2"
+                               FontWeight="Bold" />
+                    <TextBlock x:Name="emailTxt"
+                               Style="{StaticResource PhoneTextSubtleStyle}" 
+                               Text="email"
+                               TextWrapping="Wrap"
+                               Margin="12,12,0,0" />
+                </StackPanel>
+                <StackPanel Grid.Row="2"
+                            Grid.ColumnSpan="2"
+                            Margin="0,12,0,0">
+                    <TextBlock x:Name="cityText"
+                               Text="Your Home Town:"
+                               Margin="12,0,0,-6"
+                               Style="{StaticResource PhoneTextSubtleStyle}" />
+                    <TextBox x:Name="cityTxtBox" />
+                    <TextBlock x:Name="countyTxt" 
+                               Text="your County:"
+                               Margin="12,0,0,-6"
+                               Style="{StaticResource PhoneTextSubtleStyle}" />
+                    <TextBox x:Name="countyTextBox" />
+                </StackPanel>
+                <Button x:Name="saveProfileBtn"
+                        HorizontalAlignment="Stretch"
+                        Grid.ColumnSpan="2"
+                        Margin="0,24,0,0"
+                        Height="72"
+                        Grid.Row="3"
+                        Content="SAVE"
+                        Click="saveProfileBtn_Click"/>
+            </Grid>
         </Grid>
-    </Grid>
-
+    </ScrollViewer>
 </phone:PhoneApplicationPage>
